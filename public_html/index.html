@@ -1,0 +1,168 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">My Sudoku Solver</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-hover table-bordered">
+                    <tr>
+                        <td><span id='p111' class="possible-cell"></span><span id='111' class="cell"></span>(2)</td>
+                        <td><span id='p121' class="possible-cell"></span><span id='121' class="cell">9</span></td>
+                        <td><span id='p131' class="possible-cell"></span><span id='131' class="cell"></span>(5)</td>
+                        <td><span id='p142' class="possible-cell"></span><span id='142' class="cell">7</span></td>
+                        <td><span id='p152' class="possible-cell"></span><span id='152' class="cell"></span>(4)</td>
+                        <td><span id='p162' class="possible-cell"></span><span id='162' class="cell">3</span></td>
+                        <td><span id='p173' class="possible-cell"></span><span id='173' class="cell">8</span></td>
+                        <td><span id='p183' class="possible-cell"></span><span id='183' class="cell"></span>(6)</td>
+                        <td><span id='p193' class="possible-cell"></span><span id='193' class="cell">1</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id='p211' class="possible-cell"></span><span id='211' class="cell"></span>(4)</td>
+                        <td><span id='p221' class="possible-cell"></span><span id='221' class="cell">3</span></td>
+                        <td><span id='p231' class="possible-cell"></span><span id='231' class="cell"></span>(1)</td>
+                        <td><span id='p242' class="possible-cell"></span><span id='242' class="cell">8</span></td>
+                        <td><span id='p252' class="possible-cell"></span><span id='252' class="cell">6</span></td>
+                        <td><span id='p262' class="possible-cell"></span><span id='262' class="cell"></span>(5)</td>
+                        <td><span id='p273' class="possible-cell"></span><span id='273' class="cell">9</span></td>
+                        <td><span id='p283' class="possible-cell"></span><span id='283' class="cell">2</span></td>
+                        <td><span id='p293' class="possible-cell"></span><span id='293' class="cell"></span>(7)</td>
+                    </tr>
+                    <tr>
+                        <td><span id='p311' class="possible-cell"></span><span id='311' class="cell">8</span></td>
+                        <td><span id='p321' class="possible-cell"></span><span id='321' class="cell"></span>(7)</td>
+                        <td><span id='p331' class="possible-cell"></span><span id='331' class="cell"></span>(6)</td>
+                        <td><span id='p342' class="possible-cell"></span><span id='342' class="cell">1</span></td>
+                        <td><span id='p352' class="possible-cell"></span><span id='352' class="cell">9</span></td>
+                        <td><span id='p362' class="possible-cell"></span><span id='362' class="cell">2</span></td>
+                        <td><span id='p373' class="possible-cell"></span><span id='373' class="cell"></span>(5)</td>
+                        <td><span id='p383' class="possible-cell"></span><span id='383' class="cell"></span>(4)</td>
+                        <td><span id='p393' class="possible-cell"></span><span id='393' class="cell">3</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id='p414' class="possible-cell"></span><span id='414' class="cell"></span>(3)</td>
+                        <td><span id='p424' class="possible-cell"></span><span id='424' class="cell">8</span></td>
+                        <td><span id='p434' class="possible-cell"></span><span id='434' class="cell"></span>(7)</td>
+                        <td><span id='p445' class="possible-cell"></span><span id='445' class="cell">4</span></td>
+                        <td><span id='p455' class="possible-cell"></span><span id='455' class="cell">5</span></td>
+                        <td><span id='p465' class="possible-cell"></span><span id='465' class="cell"></span>(9)</td>
+                        <td><span id='p476' class="possible-cell"></span><span id='476' class="cell">2</span></td>
+                        <td><span id='p486' class="possible-cell"></span><span id='486' class="cell"></span>(1)</td>
+                        <td><span id='p496' class="possible-cell"></span><span id='496' class="cell"></span>(6)</td>
+                    </tr>
+                    <tr>
+                        <td><span id='p514' class="possible-cell"></span><span id='514' class="cell"></span>(6)</td>
+                        <td><span id='p524' class="possible-cell"></span><span id='524' class="cell">1</span></td>
+                        <td><span id='p534' class="possible-cell"></span><span id='534' class="cell"></span>(2)</td>
+                        <td><span id='p545' class="possible-cell"></span><span id='545' class="cell"></span>(3)</td>
+                        <td><span id='p555' class="possible-cell"></span><span id='555' class="cell"></span>(8)</td>
+                        <td><span id='p565' class="possible-cell"></span><span id='565' class="cell">7</span></td>
+                        <td><span id='p576' class="possible-cell"></span><span id='576' class="cell"></span>(4)</td>
+                        <td><span id='p586' class="possible-cell"></span><span id='586' class="cell">9</span></td>
+                        <td><span id='p596' class="possible-cell"></span><span id='596' class="cell">5</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id='p614' class="possible-cell"></span><span id='614' class="cell">5</span></td>
+                        <td><span id='p624' class="possible-cell"></span><span id='624' class="cell"></span>(4)</td>
+                        <td><span id='p634' class="possible-cell"></span><span id='634' class="cell"></span>(9)</td>
+                        <td><span id='p645' class="possible-cell"></span><span id='645' class="cell">2</span></td>
+                        <td><span id='p655' class="possible-cell"></span><span id='655' class="cell"></span>(1)</td>
+                        <td><span id='p665' class="possible-cell"></span><span id='665' class="cell">6</span></td>
+                        <td><span id='p676' class="possible-cell"></span><span id='676' class="cell"></span>(7)</td>
+                        <td><span id='p686' class="possible-cell"></span><span id='686' class="cell">3</span></td>
+                        <td><span id='p696' class="possible-cell"></span><span id='696' class="cell"></span>(8)</td>
+                    </tr>
+                    <tr>
+                        <td><span id='p717' class="possible-cell"></span><span id='717' class="cell">7</span></td>
+                        <td><span id='p727' class="possible-cell"></span><span id='727' class="cell">6</span></td>
+                        <td><span id='p737' class="possible-cell"></span><span id='737' class="cell"></span>(3)</td>
+                        <td><span id='p748' class="possible-cell"></span><span id='748' class="cell">5</span></td>
+                        <td><span id='p758' class="possible-cell"></span><span id='758' class="cell">3</span></td>
+                        <td><span id='p768' class="possible-cell"></span><span id='768' class="cell"></span>(4)</td>
+                        <td><span id='p779' class="possible-cell"></span><span id='779' class="cell">1</span></td>
+                        <td><span id='p789' class="possible-cell"></span><span id='789' class="cell">8</span></td>
+                        <td><span id='p799' class="possible-cell"></span><span id='799' class="cell"></span>(9)</td>
+                    </tr>
+                    <tr>
+                        <td><span id='p817' class="possible-cell"></span><span id='817' class="cell">9</span></td>
+                        <td><span id='p827' class="possible-cell"></span><span id='827' class="cell"></span>(2)</td>
+                        <td><span id='p837' class="possible-cell"></span><span id='837' class="cell">8</span></td>
+                        <td><span id='p848' class="possible-cell"></span><span id='848' class="cell"></span>(6)</td>
+                        <td><span id='p858' class="possible-cell"></span><span id='858' class="cell">7</span></td>
+                        <td><span id='p868' class="possible-cell"></span><span id='868' class="cell">1</span></td>
+                        <td><span id='p879' class="possible-cell"></span><span id='879' class="cell"></span>(3)</td>
+                        <td><span id='p889' class="possible-cell"></span><span id='889' class="cell"></span>(5)</td>
+                        <td><span id='p899' class="possible-cell"></span><span id='899' class="cell">4</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id='p917' class="possible-cell"></span><span id='917' class="cell">1</span></td>
+                        <td><span id='p927' class="possible-cell"></span><span id='927' class="cell"></span>(5)</td>
+                        <td><span id='p937' class="possible-cell"></span><span id='937' class="cell"></span>(4)</td>
+                        <td><span id='p948' class="possible-cell"></span><span id='948' class="cell">9</span></td>
+                        <td><span id='p958' class="possible-cell"></span><span id='958' class="cell"></span>(3)</td>
+                        <td><span id='p968' class="possible-cell"></span><span id='968' class="cell"></span>(8)</td>
+                        <td><span id='p979' class="possible-cell"></span><span id='979' class="cell">6</span></td>
+                        <td><span id='p989' class="possible-cell"></span><span id='989' class="cell"></span>(7)</td>
+                        <td><span id='p999' class="possible-cell"></span><span id='999' class="cell">2</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+              <h2>Welcome!</h2>
+              <p>This is a sudoku solver created by Moroni Lemes in an effort to conquer one of the hardest mankind problems.</p>
+              <p><a class="btn btn-default resolve-sudoku-btn" href="#" role="button">Resolve!</a></p>
+            </div>
+        </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
