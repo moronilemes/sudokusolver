@@ -82,7 +82,7 @@ $(function(){
                 
                 var possibleValueList = [];
                 
-                
+                //console.log('Testing: ' + index + ' ' + value);
                 for (i = 1; i <= 9; i++){  
                     var possibleValue = true;
                     //console.log('Pode ser o ' + i + '?');
@@ -92,15 +92,15 @@ $(function(){
                         
                         //if(value[0] === value2[0] && i === value2[3]){
                         if(value[0] === value2[0] && (i.toString()) === (value2[3])){
-                            console.log('Found on same line');
+                            //console.log('Found on same line');
                             possibleValue = false;
                         }
                         if(value[1] === value2[1] && (i.toString()) === (value2[3])){
-                            console.log('Found on same column');
+                            //console.log('Found on same column');
                             possibleValue = false;
                         }
                         if(value[2] === value2[2] && (i.toString()) === (value2[3])){
-                            console.log('Found on same grid');
+                            //console.log('Found on same grid');
                             possibleValue = false;
                         }
                     });
@@ -120,12 +120,12 @@ $(function(){
                     thisGuy = "#p"+value[0]+value[1]+value[2];
                     $(thisGuy).html('');
                 } else if (possibleValueList.length === 0){
-                    console.log('Testing: ' + index + ' ' + value);
+                    
                     console.log('tá bugado');
                 } else {
                     var thisGuy = "#p"+value[0]+value[1]+value[2];
-                    console.log('Testing: ' + index + ' ' + value);
-                    console.log('possible values: ' + possibleValueList);
+                    //console.log('Testing: ' + index + ' ' + value);
+                    //console.log('possible values: ' + possibleValueList);
                     $(thisGuy).html(possibleValueList);
                     $(thisGuy).parent().addClass('bg-warning');
                 }
@@ -134,8 +134,17 @@ $(function(){
         });
     }
     
-    $('.resolve-sudoku-btn').click(function(){
+    $('.go-sudoku-btn').click(function(){
+        //while(true){
+            readSudokuChart();
+            setTimeout(checkCell, 2000);
+        //}
+    });
+    
+    $('.read-sudoku-btn').click(function(){
         readSudokuChart();
+    });
+    $('.resolve-sudoku-btn').click(function(){
         checkCell();
     });
     
